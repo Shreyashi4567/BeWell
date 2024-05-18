@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeWell Tools</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      body {
+
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      #bmi-calculator {
+        border: 2px solid black;
+        box-shadow: 8px 8px 20px rgb(128, 128, 128);
+        padding: 2rem;
+        height: 100%;
+        background-color: white;
+        border-radius: 2%;
+      }
+      #submit {
+        width: 100%;
+        font-size: large;
+        margin-top: 0.5rem;
+      }
+      @media screen and (max-width: 600px) {
+        body {display: block;}
+      }
+      a{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div><img src="BMI (2).png" style="height: 400px; margin: 3rem;  margin-top: 3.5rem;"></div>
+    <form id="bmi-calculator">
+        
+      <h1>The BMI Calculator</h1>
+      <div >
+        <label style="display: grid; text-align: left; margin-bottom: 1rem;">Enter your Weight!<input type="text" id="weight" placeholder="Weight in kgs" required />
+      </div>
+      <div >
+        <label style="display: grid; text-align: left; margin-bottom: 1rem;">Enter your Height!<input type="text" id="height" placeholder="Height in metres" required/>
+      </div>
+      <div >
+        <label style="display: grid; text-align: left; margin-bottom: 1rem;">Enter your Age!<input type="text" placeholder="Age in yrs" id="age" required/>
+      </div>
+      <div id="submitDIV">
+        <button id="submit" type="submit" style="cursor: pointer;">Submit!</button>
+      </div>
+      <div>
+        <p style="text-align: center; visibility: hidden; " id="bmiTAG">Your BMI is </p>
+      </div>
+      <a href="#" style="text-decoration: none; color: #990d35; font-size: large; align-content: center; " onclick="window.open('./charts.html')">Next &#128073</a>
+    </form>
+    <script>
+        document.getElementById ('bmi-calculator').addEventListener("submit", (event) => {
+        var heightUser = document.getElementById('height').value;
+        var weightUser = document.getElementById('weight').value;
+        var ageUser = document.getElementById('age').value;
+        event.preventDefault();
+        console.log(heightUser, weightUser, ageUser);
+        var indexBMI = weightUser / (heightUser*heightUser);
+        console.log(indexBMI);
+        document.getElementById('bmiTAG').innerText = `Your BMI is ${indexBMI}`;
+        document.getElementById('bmiTAG').style.visibility = "visible";
+        })
+    </script>
+  </body>
+</html>

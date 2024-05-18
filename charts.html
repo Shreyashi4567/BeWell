@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /*Importing the Font-Family required for the document*/
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+    body {
+      margin: 0;
+      padding: 0;
+      /*Adding the font-family for the body*/
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      box-sizing: border-box;
+
+    }
+    #form {
+      border: 2px solid black;
+      box-shadow: 8px 8px 20px rgb(128, 128, 128);
+      border-radius: 1rem;
+    }
+    #previous {
+      width: 100%;
+      height: 100%;
+    }
+    @media screen and (max-width: 600px) {
+        body {display: block;}
+      }
+      /*Formatting the Submit Button*/
+      button {
+        margin: 1rem;
+        font-size: medium;
+        background-color: cornsilk;
+        border-radius: 2px;
+        border: 1px solid black;
+      }
+      #genderEntry {
+        display: block;
+      }
+  </style>
+  <title>BeWell Tools</title>
+</head>
+<body>
+<h1>How Much Should You Eat For A Healthy You?</h1>
+<form id="form" style="display: inline-block; padding: 2rem;">
+  <!--Making the form which various options-->
+  <h2>Enter The Following Details:</h1>
+  <div id="genderEntry">
+  <label>Enter Your Gender!</label><br>
+  <input type="radio" name="gender" value="male" required><label for="gender">Male</label><bR>
+  <input type="radio" name="gender" value="female"><label for="gender">Female</label>
+</div>
+  <div>
+    <label style="display: grid;">Enter Your Age!</label><input id="ageEntry" type="text" placeholder="Age in yrs" required style="margin-bottom: 1rem;">
+  </div>
+  <div>
+    <label style="display: grid; ">Enter Your BMI!</label><input id="BMIEntry" type="text" placeholder="Your BMI" required style="margin-bottom: 1rem;">
+  </div>
+  
+  <div id="footer">
+    <!--The Submit Button-->
+    <button type="submit" id="submitBtn" style="cursor: pointer;">Submit!</button>
+    <p id="hiddenPara" style="color: black; margin: 0; visibility: hidden;">Your chart for Daily Task Manager is <a style="display: inline; cursor: pointer;" onclick="  window.open('chart.html');
+      " >here</a></p>
+  </div>
+  <div>
+    <!--Creating A Previous Button for BMI Calculator-->
+    <a id="previous" href="tools.html" style="display: grid; text-decoration: none; color: #990d35; font-size: large;">Previous &#128072;
+  </div>
+</form>
+
+<script>
+//Adding an event listener for checking whether all field are filled and displaying the diet chart
+document.getElementById ('form').addEventListener("submit", (event) => {
+  const genderValue = document.querySelector('input[name="gender"]:checked').value;
+  var ageofUser = document.getElementById('ageEntry').value;
+  var BMIUser = document.getElementById('BMIEntry').value;
+  event.preventDefault();
+  document.getElementById('hiddenPara').style.visibility = "visible";
+})
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Login Form</title>
+  </head>
+  <body>
+    <div class="entire-form">
+      <header>
+        <h1 class="heading">Login Form</h1>
+      </header>
+      <form action="" id="loginForm">
+        <div class="login-form">
+          <p>Please fill in this form to login into your account.</p>
+          <!--Adding the Username input box-->
+          <input type="text" id="username" placeholder="Username" required />
+        </div>
+        <div class="login-form">
+          <!--Adding the Password input box-->
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <button type="submit" id="submitLogin">Login</button>
+      </form>
+      <div class="remember-class">
+        <label> <input type="checkbox" /> Remember Me! </label>
+      </div>
+      <div class="sign-up">
+        <!--Providing the User with option of Signing Up-->
+        <p>Don't Have An Account?</p>
+        <a href="signup.html" id="sign-up">Sign Up!</a>
+      </div>
+    </div>
+    <script>
+      // Adding the event listener and checking whether both field are filled and logging in the User
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", (event) => {
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          if (!username || !password) {
+            alert("Please enter both username and password.");
+            event.preventDefault();
+          }
+          window.open("tools.html");
+        });
+    </script>
+  </body>
+</html>

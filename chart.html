@@ -1,0 +1,61 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+<style>
+  /*Importing the required Font-Family*/
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+    body {
+        font-family: "Poppins", sans-serif;
+    }
+    #piechart {
+        display: block;
+        font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+        border-radius: 0.4rem;
+    }
+</style>
+</head>
+
+<body>
+
+<h1 style="text-align: center;">Chart For Daily Nutrient Intake!</h1>
+<div id="lastDiv">
+  <p id="lastPara" style="cursor: default;">Want to Check Out Latest Update on Nutrient Requirements?
+    <a href="https://metabolichealthdigest.com/nutrient-requirements-for-indians-icmr-nin-2020/">Click Here!</a></p>
+
+</div>
+<div id="piechart" style="border: 2px solid black;">
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+    
+</script>
+
+<script>
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+//Making the piechart
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Nutrients', 'Percentage Intake'],
+  ['Fruits, Vegetables', 40],
+  ['Carbohydrates', 25],
+  ['Proteins', 25],
+  ['Fats', 10],
+]);
+
+  // Adding a title and set the width and height of the chart
+  var options = {'title':'Daily Nutrient Intake', 'width':550, 'height':400};
+
+  // Displaying the chart inside the <div> element
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+</body>
+</html>

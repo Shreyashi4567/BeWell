@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeWell</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">BeWell</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#goals">Goals</a></li>
+          <li><a href="#rewards">Rewards</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="./login.html">Profile</a></li>
+
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">BeWell</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#goals" onclick="toggleMenu()">Goals</a></li>
+          <li><a href="#rewards" onclick="toggleMenu()">Rewards</a></li>
+          <li><a href="tools.html" onclick="toggleMenu()">Tools</a></li>
+          <li><a href="#profile" onclick="toggleMenu()">Profile</a></li>
+
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="BeWell.jpeg" alt="BeWell Logo" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Welcome To</p>
+        <h1 class="title">BeWell</h1>
+        <p class="section__text__p2">Fitness Tracker Web Application!</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./login.html')"
+          >
+            Login
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='signup.html'">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      
+      <h1 class="title">About</h1>
+      <div class="section-container">
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img src="Clock.png" alt="Clock" class="icon"/>
+              <h3>Set Goals</h3>
+              <p>Allows users to set goals for themselves,  <br />like a daily step target or a weekly distance target.</p>
+            </div>
+            <div class="details-container">
+              <img src="Calendar.png" alt="Calendar" class="icon" />
+              <h3>Monitor Progress</h3>
+              <p>This involves charts or graphs <br />showing how users are tracking towards their goals.</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              This application has several tools like BMI Calculator, Diet Chart Planner which help
+              you to keep track of your diet regularly. By entering your goals, you get the diet requirement
+              of your body and suggests new ways to keep yourself healthy. These elevate your to-do list to become
+              more achievable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="goals">
+      <p class="section__text__p1">Achieve Your Fitness Goals!</p>
+      <h1 class="title">Goals</h1>
+      <div class="goals-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="goals-sub-title">Pick Your Perfect Path:</h2>
+            <p>Set goals that match your interests, whether you want to walk more, or run a faster mile.</p>
+          </div>
+          <div class="details-container">
+            <h2 class="goals-sub-title">Stay on Track and Level Up:</h2>
+            <p> Easily monitor your progress and see how close you are to reaching your goals.
+              Achieve your goals and set new challenges to keep yourself motivated and improving.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="rewards">
+      <p class="section__text__p1">Gear Up For</p>
+      <h1 class="title">Your Fitness Dream!</h1>
+      <div class="goals-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="GoalAcheived.png" class="pic1-img" />
+            </div>
+            <h2 class="goals-sub-title project-title">Start The Journey Now!</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='./login.html'">
+                Start Now! </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="LevelUp.png"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="goals-sub-title project-title">Explore Charts & Graphs</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='./charts.html'"
+              >
+                Start Now!
+              </button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr style="border:3px solid #f1f1f1">
+    <section id="footer">
+      <p class="section__text__p1" id="scrollToTopBtn" >Scroll To Top &#9757</p>
+      <h1 class="title">Hope You Like It &#128512 </h1>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

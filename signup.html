@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signup.css" />
+    <title>SignUp Form</title>
+  </head>
+  <body>
+    <div class="entire-form">
+      <header>
+        <h1 class="heading">SignUp Form</h1>
+      </header>
+      <form action="" id="signUpForm">
+        <div class="signup-form">
+          <p>Please fill in this form to register.</p>
+          <input
+            type="text"
+            id="new-username"
+            placeholder="Username"
+            required
+          />
+        </div>
+        <div class="signup-form">
+          <input
+            type="password"
+            id="new-password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <button type="submit" id="submitSignup">Sign Up</button>
+      </form>
+      <div class="log-in">
+        <p>Have An Account Already?</p>
+        <a href="login.html" id="log-in">Log In!</a>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("signUpForm")
+        .addEventListener("submit", function (event) {
+          var newUsername = document.getElementById("new-username").value;
+          var newPassword = document.getElementById("new-password").value;
+
+          if (!newUsername || !newPassword) {
+            alert("Please fill in all fields.");
+            event.preventDefault();
+          }
+          window.open('tools.html');
+        });
+    </script>
+  </body>
+</html>
