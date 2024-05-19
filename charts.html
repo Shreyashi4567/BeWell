@@ -45,7 +45,7 @@
 <body>
 <h1>How Much Should You Eat For A Healthy You?</h1>
 <form id="form" style="display: inline-block; padding: 2rem;">
-  <!--Making the form which various options-->
+  <!--Making the form with various options-->
   <h2>Enter The Following Details:</h1>
   <div id="genderEntry">
   <label>Enter Your Gender!</label><br>
@@ -62,7 +62,7 @@
   <div id="footer">
     <!--The Submit Button-->
     <button type="submit" id="submitBtn" style="cursor: pointer;">Submit!</button>
-    <p id="hiddenPara" style="color: black; margin: 0; visibility: hidden;">Your chart for Daily Task Manager is <a style="display: inline; cursor: pointer;" onclick="  window.open('chart.html');
+    <p id="hiddenPara" style="color: black; margin: 0; visibility: hidden;">Your chart for Daily Nutrient Intake is <a style="display: inline; cursor: pointer;" onclick="  window.open('chart.html');
       " >here</a></p>
   </div>
   <div>
@@ -72,7 +72,7 @@
 </form>
 
 <script>
-//Adding an event listener for checking whether all field are filled and displaying the diet chart
+//Adding an event listener for checking whether all fields are filled and displaying the diet chart
 document.getElementById ('form').addEventListener("submit", (event) => {
   const genderValue = document.querySelector('input[name="gender"]:checked').value;
   var ageofUser = document.getElementById('ageEntry').value;
