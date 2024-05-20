@@ -70,9 +70,10 @@
     <a id="previous" href="tools.html" style="display: grid; text-decoration: none; color: #990d35; font-size: large;">Previous &#128072;
   </div>
 </form>
-
+<p id="newPara"><a style="cursor: pointer; font-size: large;" onclick="pointsofUser()">Get Your Points!</a></p>
+<p id="pointsPara"></p>
 <script>
-//Adding an event listener for checking whether all fields are filled and displaying the diet chart
+//Adding an event listener to check whether all fields are filled and displaying the diet chart
 document.getElementById ('form').addEventListener("submit", (event) => {
   const genderValue = document.querySelector('input[name="gender"]:checked').value;
   var ageofUser = document.getElementById('ageEntry').value;
@@ -80,7 +81,85 @@ document.getElementById ('form').addEventListener("submit", (event) => {
   event.preventDefault();
   document.getElementById('hiddenPara').style.visibility = "visible";
 })
-
+var pointsUser = 10;
+function pointsofUser() {
+  var bmiTrue = prompt('Did You Measure Your BMI?');
+  switch (bmiTrue) {
+    case 'yes' :
+    pointsUser = pointsUser + 10 ;
+        break;
+    case 'No' :
+    pointsUser = pointsUser - 10 ;
+        break;
+    case 'Yes' :
+    pointsUser = pointsUser + 10 ;
+        break;
+    case 'yEs' :
+    pointsUser = pointsUser + 10 ;
+        break;
+    case 'YES' :
+    pointsUser = pointsUser + 10 ;
+        break;
+    case 'yeS' :
+    pointsUser = pointsUser + 10 ;
+        break;
+    case 'yES' :
+    pointsUser = pointsUser + 10 ;
+        break;
+    case 'NO' :
+    pointsUser = pointsUser - 10 ;
+        break;
+    case 'no' :
+    pointsUser = pointsUser - 10 ;
+        break;
+    case 'nO' :
+    pointsUser = pointsUser - 10 ;
+        break;
+}
+  var nutrientChart = prompt("Did You Get Your Daily Nutrient Chart?");
+  switch (nutrientChart) {
+    case 'yes' :
+    pointsUser = pointsUser + 20 ;
+        break;
+    case 'No' :
+    pointsUser = pointsUser - 10 ;
+        break;
+    case 'Yes' :
+    pointsUser = pointsUser + 20 ;
+        break;
+    case 'yEs' :
+    pointsUser = pointsUser + 20 ;
+        break;
+    case 'YES' :
+    pointsUser = pointsUser + 20 ;
+        break;
+    case 'yeS' :
+    pointsUser = pointsUser + 20 ;
+        break;
+    case 'yES' :
+    pointsUser = pointsUser + 20 ;
+        break;
+    case 'NO' :
+    pointsUser = pointsUser - 10 ;
+        break;
+    case 'no' :
+    pointsUser = pointsUser - 10 ;
+        break;
+    case 'nO' :
+    pointsUser = pointsUser - 10 ;
+        break;
+}
+var glassesWater = prompt("How many Glasses of Water Should You Drink per day?");
+if (glassesWater == 8) {
+  pointsUser = pointsUser + 30 ;
+}
+else if (glassesWater == 7) {
+  pointsUser = pointsUser + 30;
+} else {
+  pointsUser = pointsUser - 10;
+}
+document.getElementById('pointsPara').innerText = `${pointsUser} points!`;
+}
 </script>
 
 </body>
